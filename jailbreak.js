@@ -173,3 +173,107 @@ LLLLLLLLLLLLLLLL`],
 ); 
 
 setBackground(background)
+
+const melody1 = tune`
+500,
+500: A5^500,
+15000`;
+const melody2 = tune`
+500,
+500: C5~500,
+15000`;
+const melody3 = tune`
+500,
+500: D4~500,
+15000`;
+const melody4 = tune`
+500,
+500: B4^500,
+15000`;
+
+let level = 0
+const levels = [
+  map`
+s..wwwww
+ww..w.wf
+.......f
+.ww.wwwf
+w..w...f
+ww.ww.wf
+r.....ww`,
+  map`
+.....ww.ww
+.www...w.f
+sw.w.ww..f
+ww.w..w.wf
+r.w.wkww.f
+w.w....g.f
+w....w.www
+wwwwwwww.w`,
+  map`
+.wwwww.....ffff
+s....wwww.w...w
+wwww.w...w.ww.w
+w....w.w.ww.w.w
+w.wwww.w...w..w
+w..kw..wwwgww.w
+www...ww....w..
+.w...w.w.wwww.w
+rw.ww..w..w...w
+...w....w...www`,
+  map`
+fffffw....w......wwww
+w.w..w.w.ww.wwwww..w.
+w.ww.wwwww..w........
+w..gwk...w..w.wwwwww.
+.ww..www.ww.www....w.
+ww.....w.w.......w...
+w..www.w.w..w.w.w.w..
+w..www.w...wwww.ww..w
+ww.ww..ww..w....w..ww
+.w....w...ww.wwwww..w
+w..www...ww..w....w.w
+w.w..w.www..w..ww.w..
+w..w....w..w..w....w.
+ww..ww.w.w...ww.wwww.
+..w....w.wwwwwws.w.r.`,
+  map`
+wr.w.sw.......wfff
+w..w..w..wwww.w...
+..w.w..w....w.wgww
+.w.w.w.w.w..w.w...
+..w.w..ww..w..www.
+w...w.w.w.ww.ww...
+www.w...w.w....w..
+www.w.www.www..w.w
+ww..w......w..ww..
+w...wwwww.ww.ww..w
+www..w.w..w..w..ww
+www...k...w....www`,  
+  map`
+www...........wwwwww......ww
+w.wkwwwwwwww..w....w.w.w...w
+w.wwww.......ww.ww.w.ww..www
+w....w.wwwww.w..w..w..w.wwwf
+.w.w.w....w..w.ww.w...w.w..f
+ww.w..www.ww.w..w.w.www.w.wf
+w..w..www..w.ww.w.w...w.w.wf
+ww.ww.www.ww..w.w.www.w.w..w
+.w..w..w..w..ww.w...w.w..w.w
+ww..ww...ww.ww..ww.w..w..w.w
+...w.wwwwww..ww.ww.w.w..w..w
+.ww.w....ww..ww.w..w.w.ww.ww
+.w.w.w.ww.w.w...w.w..wgw..ww
+.ww.w.w.www.w.ww..w.w..ww...
+..........w.w..ww.w..w...ww.
+wwwwwwwww.w.ww..w.ww.ww...w.
+.......w..w.www.w..w..w.ww..
+.ww.ww..w.w...w.w.ww.w..w..w
+.ww.www.w.www.w.w..w..w.w.ww
+..w.www.w...w....w.w..w.w.w.
+sww.www.www.wwwwww...w.....w
+.w.r.ww......www.wwwwwwwwwww`,
+]
+
+setMap(levels[level])
+
