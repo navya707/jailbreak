@@ -277,3 +277,60 @@ sww.www.www.wwwwww...w.....w
 
 setMap(levels[level])
 
+onInput("w", () => {
+  getFirst(robber).y -= 1
+  playTune(melody1, 1)
+})
+
+onInput("a", () => {
+  getFirst(robber).x -= 1
+  playTune(melody2, 1)
+})
+
+onInput("s", () => {
+  getFirst(robber).y += 1
+  playTune(melody3, 1)
+})
+
+onInput("d", () => {
+  getFirst(robber).x += 1
+  playTune(melody4, 1)
+})
+
+onInput("i", () => {
+  getFirst(robber2).y -= 1
+  playTune(melody1, 1)
+})
+
+onInput("j", () => {
+  getFirst(robber2).x -= 1
+  playTune(melody2, 1)
+})
+
+onInput("k", () => {
+  getFirst(robber2).y += 1
+  playTune(melody3, 1)
+})
+
+onInput("l", () => {
+  getFirst(robber2).x += 1
+  playTune(melody4, 1)
+})
+
+setSolids([robber, robber2, wall, gate])
+
+let robber1Score = 0;
+let robber2Score = 0;
+
+afterInput(() => {
+  if (tilesWith(robber, finish).length > 0) {
+    robber1Score++; 
+    clearTile(getFirst(robber).x, getFirst(robber).y); 
+    level++; // Increment the level
+    if (level < levels.length) {
+      setMap(levels[level]);
+    } else {
+      level = 0;
+      setMap(levels[level]);
+    }
+  }
