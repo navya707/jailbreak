@@ -334,3 +334,49 @@ afterInput(() => {
       setMap(levels[level]);
     }
   }
+
+  
+  if (tilesWith(robber2, finish).length > 0) {
+    robber2Score++; // Increment robber 2's score if they reach the finish
+    clearTile(getFirst(robber2).x, getFirst(robber2).y); // Clear the finish tile
+    level++;
+    if (level < levels.length) {
+      setMap(levels[level]);
+    } else {
+      level = 0;
+      setMap(levels[level]);
+    }
+  }
+  
+  // Update the displayed scores after the score increments
+  displayScores();
+})
+
+const displayScores = () => {
+  addText(`Robber 1 Score: ${robber1Score}`, { x: 1, y: 1, color: color`2`, size: 1 });
+  addText(`Robber 2 Score: ${robber2Score}`, { x: 1, y: 2, color: color`9`, size: 1 });
+}
+
+// Call displayScores to ensure scores are always visible
+displayScores();
+
+ afterInput(() => {
+  const keysTakenByRobber1 = tilesWith(robber, key);
+  const keysTakenByRobber2 = tilesWith(robber2, key);
+
+  if (keysTakenByRobber1.length >= 1) {
+    getFirst(gate).remove();
+    let playguy = getFirst(robber)
+    getTile(playguy.x, playguy.y)[1].remove();
+  };
+
+  if (keysTakenByRobber2.length >= 1) {
+    getFirst(gate).remove();
+    let playguy = getFirst(robber2)
+    getTile(playguy.x, playguy.y)[1].remove();
+  }
+ });
+
+
+
+
